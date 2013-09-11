@@ -1,0 +1,31 @@
+{ "name": "roll-dice"
+, "description": "shared dice roller"
+, "version": "0.0.1"
+, "homepage": "https://github.com/smilekzs/roll-dice"
+, "repository":
+  { "type": "git"
+  , "url": "git://github.com/smilekzs/roll-dice.git"
+  }
+, "bugs":
+  { "url": "https://github.com/smilekzs/roll-dice/issues"
+  }
+, "author":
+  { "name": "smilekzs"
+  }
+, "licenses":
+  [ { "type": "MIT"
+    }
+  ]
+, "engines":
+  { "node": ">= 0.10.0"
+  }
+, "dependencies":
+  { "express": "~3.0.0"
+  , "node-uuid": "~1.4.1"
+  , "moment": "~2.1.0"
+  , "jade": "~0.35.0"
+  }
+, "devDependencies":
+  { "iced-coffee-script": ">=1.6.0"
+  }
+}

@@ -1,0 +1,20 @@
+doctype 5
+html
+  head
+    title Dice Roller
+  body
+    if !reveal
+      h1 Wait for <span id="t">#{remain_Ts}</span> seconds...
+      script.
+        var remain_Ts = #{remain_Ts};
+        var t = document.getElementById('t');
+        var tid = setInterval(function(){
+          if (--remain_Ts <= 0) {
+            clearInterval(tid);
+            window.location.reload();
+          } else {
+            t.innerHTML = remain_Ts;
+          }
+        }, 1000);
+    else
+      h1= rand
