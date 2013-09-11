@@ -1,0 +1,22 @@
+doctype 5
+html
+  head
+    title Dice Roller
+  body
+    h1 Dice Roller
+    p.
+      Ever had trouble of reaching consensus with online friends?
+      What could work better than a random number!
+    p.
+      This tool generates a random number between 0 and 1, bound to a unique, private URL,
+      which will only be revealed 1 minute after creation.
+    h2 Usage
+    p
+      ol
+        li First decide on how you should use this random number to help you decide;
+        li Click the "roll" button;
+        li Share the link with your friends <em>FAST</em>!
+        li When time is up, page should refresh (or you could refresh manually) and the number shall be revealed.
+    h2 Enjoy!
+    form(method='POST', action='/create')
+      input(type='submit', value='roll!')
