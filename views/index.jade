@@ -1,22 +1,45 @@
-doctype 5
+!!! 5
 html
   head
     title Dice Roller
   body
-    h1 Dice Roller
-    p.
-      Ever had trouble of reaching consensus with online friends?
-      What could work better than a random number!
-    p.
-      This tool generates a random number between 0 and 1, bound to a unique, private URL,
-      which will only be revealed 1 minute after creation.
-    h2 Usage
-    p
-      ol
-        li First decide on how you should use this random number to help you decide;
-        li Click the "roll" button;
-        li Share the link with your friends <em>FAST</em>!
-        li When time is up, page should refresh (or you could refresh manually) and the number shall be revealed.
-    h2 Enjoy!
     form(method='POST', action='/create')
-      input(type='submit', value='roll!')
+      input(type='submit', value='ROLL!', style='font-size: 2em;')
+    hr
+    //- currently manually synchronized with index.md
+    #readme.markdown
+      :markdown
+        # Dice Roller
+
+        Ever had trouble of reaching consensus with online friends?
+
+
+        ## Problem
+
+        Suppose Alice and Bob wants to meet at either his or her apartment, but since
+        they are so lazy, both would like to stay at his/her own apartment while the
+        other comes. They agrees to resolve this conflict using random numbers, but
+        suspects each other of cheating...
+
+        Had they already met, they can toss a coin with _both_ witnessing, eliminating
+        the possibility of cheating. But since they're online, they need a way to ensure
+        _synchronicity_ of the coin-tossing / dice-rolling event...
+
+
+        ## Solution
+
+        This tool generates a random number between 0 and 1, bound to a unique, private
+        URL, which will only be revealed 1 minute after creation.
+
+        With this, Alice and Bob can solve their consensus problem easily:
+
+        1.  Alice and Bob first agree on how to use the random number `x`:
+            *   `x < 0.5`: go to Alice's apartment
+            *   `x > 0.5`: go to Bob's apartment
+        2.  Alice clicks `ROLL!` button and is shown the dice page
+        3.  While the countdown is still ticking, Alice shares the page URL with Bob
+        4.  When Bob opens the dice page, he also sees the same countdown
+        5.  The countdown expires, and the number is revealed to both (the page should
+            automatically refresh, but if it doesn't, they can always refresh manually)
+        6.  Since both witnessed the same "dice-rolling" event, both can be sure neither
+            has cheated. Decision made!
